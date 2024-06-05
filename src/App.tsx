@@ -27,6 +27,7 @@ export function App() {
     setReleases(response.data.releases);
   };
 
+
   useEffect(() => { handlefetchData() }, []);
 
   return (
@@ -57,7 +58,9 @@ export function App() {
                 <div key={note.id} className='mb-8'>
                   <h3 className='font-semibold'>{note.topic}</h3>
                   <div dangerouslySetInnerHTML={{ __html: note.description }}></div>
-                  <a href={note.link} target='_blank' className='link'>Saiba mais</a>
+                  {note.link && (
+                    <a href={note.link} target='_blank' className='link'>Saiba mais</a>
+                  )}
                 </div>
               )
             ))}
@@ -71,7 +74,9 @@ export function App() {
                 <div key={note.id} className='mb-8'>
                   <h3 className='font-semibold'>{note.topic}</h3>
                   <div dangerouslySetInnerHTML={{ __html: note.description }}></div>
-                  <a href={note.link} target='_blank' className='link'>Saiba mais</a>
+                  {note.link && (
+                    <a href={note.link} target='_blank' className='link'>Saiba mais</a>
+                  )}
                 </div>
               )
             ))}
@@ -85,7 +90,9 @@ export function App() {
                 <div key={note.id} className='mb-8'>
                   <h3 className='font-semibold'>{note.topic}</h3>
                   <div dangerouslySetInnerHTML={{ __html: note.description }}></div>
-                  <a href={note.link} target='_blank' className='link'>Saiba mais</a>
+                  {note.link && (
+                    <a href={note.link} target='_blank' className='link'>Saiba mais</a>
+                  )}
                 </div>
               )
             ))}
