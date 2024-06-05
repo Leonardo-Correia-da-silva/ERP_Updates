@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.titulo {
+    font-size: 2.3rem;
+    margin-right: 35rem;
+    margin-top: 2rem;
+    color: white;
+}
+
+.titulo-sec {
+    color: #ffffffbd;
+}
+
+.news-box-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+
+.news-box {
+    flex-direction: column;
+    align-items: start;
+    width: 70rem;
+    background-color: rgba(196, 224, 250, 0.315);
+    padding: 5rem;
+    border-radius: 8px;
+    
+}
+
+
+
+.data {
+    font-family: 'Arial', sans-serif;
+    font-size: 1rem;
+    color: #5f5e5e9d;
+    font-weight: bold;
+    font-style: italic;
+    letter-spacing: 0.5px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-left: -8px;
+}
+
+.topico {
+    color: rgba(34, 106, 201, 0.596);
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2rem;
+}
+
+.titulo-label {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    margin-top: -2rem;
+}
+
+.titulo-paragrafo {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #5f5e5e;
+}
+ 
+
+.link {
+    font-size: 15px;
+    color: rgba(21, 86, 172, 0.705);
+    transition: transform 0.3s ease;
+}
+
+.link:hover{
+    font-size: 16px;
+    transition: transform 0.5s ease;
+    color: rgb(11, 80, 160);
+}
+
+.feedback {
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    color: red;
+    
+}
+
+
+.texto {
+    width: 70rem;
+    background-color: rgba(224, 222, 222, 0.315);
+    align-items: center;
+    border-radius: 8px;
+    padding: 10px;
+
+
+}
+
+.enviar {
+    text-align: center;
+    font-size: 15px;
+    color: #3a3a3a;
+}
+
+
+.botao {
+    width: 70rem;
+    background-color: rgb(199, 197, 197);
+    align-items: center;
+    border-radius: 8px;
+    font-family: "Poppins", sans-serif;
+    height: 2rem;
+}
+
+.botao:hover{
+    color:white;
+    background-color: #979797;
+}
+
+
+@media (max-width: 1200px) {
+
+    .news-box,
+    .texto,
+    .botao {
+        width: 40rem;
+        padding: 4rem;
+        margin-top: -30rem;
+    }
+
+    .titulo {
+        margin-right: 5rem;
+    }
+
+    .feedback {
+        margin-top: -25rem;
+    }
+
+
+}
+
+
+
+@media (max-width: 768px) {
+
+    .news-box,
+    .texto,
+    .botao {
+        width: 40rem;
+        padding: 2rem;
+        margin-top: 2rem;
+    }
+
+    .titulo {
+        margin-right: 20rem;
+        font-size: 1.6rem;
+    }
+
+  
+    .botao{
+        margin-top: 1rem;
+    }
+
+}
+
+
+
+
+@media (max-width: 430px) {
+
+    .news-box-container{
+        height: 100%;
+    }
+
+    .news-box, .texto, .botao {
+        width: 90%;
+        padding: 2rem;
+        margin-top: 2rem;
+        flex-direction: column;
+    }
+
+
+    .div-titulo {
+        margin-top: -1.3rem;
+    }
+
+
+    .titulo {
+        margin-right: 0px;
+        font-size: 1.5rem;
+    }
+
+
+    .titulo-sec {
+        font-size: 0.8rem;
+        margin-top: -4px;
+    }
+
+
+    .topico {
+        font-size: 1.5rem;
+    }
+
+
+    .feedback {
+        margin-top: 0rem;
+    }
+
+
+    .botao {
+        margin-top: 5px;
+        background-color: rgb(199, 197, 197);
+        height: 3rem;
+    }
+
+
+}
+
+
+
+
+
+@media (max-width: 390px) {
+
+    .news-box-container{
+        height: 100%;
+    }
+
+    .news-box, .texto, .botao {
+        width: 90%;
+        padding: 2rem;
+        margin-top: 2rem;
+        flex-direction: column;
+    }
+   
+
+    .titulo {
+        margin-right: 0px;
+        font-size: 1.4rem;
+        margin-top: 2rem;
+    
+    }
+
+    .titulo-sec{
+        font-size: 0.8rem;
+        margin-top: -6px;
+    }
+
+    .topico{
+        font-size: 1.5rem;
+    }
+
+    .feedback {
+        margin-top: 2rem;
+    }
+
+    .botao{
+        margin-top: 5px;
+        background-color: rgb(199, 197, 197);
+        
+    }
+
+   
+}
