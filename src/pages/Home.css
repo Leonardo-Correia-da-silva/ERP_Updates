@@ -1,0 +1,165 @@
+
+.button {
+    justify-content: center;
+    position: fixed;
+    right: 20px; 
+    bottom: 20px; 
+    color: rgb(2, 82, 128);
+    background-color: rgba(104, 171, 202, 0.164);
+    border-color: rgba(112, 186, 236, 0.555);
+    border-radius: 5px;
+    height: 2rem;
+    width: auto;
+    padding: 0 10px;
+    z-index: 1000;
+    
+  }
+  
+  
+  .button:hover{
+    background-color: rgba(3, 77, 119, 0.226);
+  }
+  
+  .App{
+      margin-top: 5rem;
+      
+  }
+  
+    .div-logo {
+      display: flex;  
+      justify-content: center;
+    
+    }
+    
+    header {
+      display: flex;
+      flex-direction: row; 
+      align-items: center;
+      
+    }
+  
+  
+    
+    .logo1{
+      max-width: 100%; 
+      width: 5rem;
+      margin-right: 2rem;
+      
+    }
+    
+  
+    
+    .titulo{
+      text-align: center;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      color: rgba(0, 0, 0, 0.76);
+    }
+    
+  
+  
+  h3{
+    margin-left: 5rem;
+    margin-top: 5rem;
+    color: rgba(3, 121, 3, 0.726);
+  }
+  
+  
+  p{
+    margin-left: 0rem;
+    margin-top: -1.5rem;
+    color: rgba(34, 36, 34, 0.87);
+  }
+  
+.paragrafo{
+    margin-left: 5rem;
+    margin-top: -1.5rem;
+    color: rgba(34, 36, 34, 0.87);
+}
+  
+  
+  
+  
+  @media (max-width: 768px) {
+      
+    .App{
+        margin-top: -10rem;
+    }
+    .div-logo {
+      flex-direction: column;
+      margin-top: 12rem;
+      
+    }
+  
+    header {
+      flex-direction: column;
+    }
+  
+    .titulo{
+      font-size: 1.5rem;
+      margin-top: 2rem;
+    }
+  
+    .logo1 {
+      width: 4rem;
+      
+    }
+  
+    
+    .img-proced-1 {
+      margin-left: 0;
+      margin-top: 1rem;
+      max-width: 100%;
+      justify-content: center;
+    }
+    
+    .comando{
+      margin-left: 0;
+      margin-top: 1rem;
+      max-width: 100%;
+      justify-content: center;
+    }
+  
+    .comando2{
+      margin-left: 0;
+      margin-top: 1rem;
+      max-width: 100%;
+      justify-content: center;
+    }
+    
+  
+    h3, p {
+      margin-left: 1rem;
+      margin-right: 1rem;
+      margin-top: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+  
+    h3 {
+      margin-top: 6rem;
+      font-size: 0.9rem;
+    }
+  
+    .logo1 {
+      width: 4rem;
+      margin-left: 2.5rem;
+      margin-top: 1rem;
+     
+    }
+  
+    
+    .img-proced-1 {
+      margin-left: 0;
+      margin-top: 1rem;
+      max-width: 100%;
+      justify-content: center;
+    }
+  
+   
+  
+    .titulo{
+      font-size: 1.3rem;
+      margin-top: 2rem;
+    }
+  }
