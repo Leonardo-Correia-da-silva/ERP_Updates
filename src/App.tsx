@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { LogoLoginMobile } from '../src/logologinMobile';
 import "../src/App.css";
 import { api } from './service/api';
