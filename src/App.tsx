@@ -12,13 +12,6 @@ dayjs.extend(utc);
 dayjs.extend(timezone);
 dayjs.locale('pt-br');
 
-type TAuthLayout = {
-  children: ReactNode;
-  navigation?: string;
-  titleAuth: string;
-  route?: string;
-  isNavigation?: boolean;
-};
 
 export function App() {
   const [releases, setReleases] = useState<Release[]>([]);
