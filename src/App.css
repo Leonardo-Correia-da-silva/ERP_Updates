@@ -44,7 +44,7 @@
     background-color: rgba(196, 224, 250, 0.315);
     padding: 5rem;
     border-radius: 8px;
-    
+    margin-top: -1.4rem;
 }
 
 
@@ -110,7 +110,7 @@
     .news-box, .texto, .botao {
         width: 90%;
         padding: 2rem;
-        margin-top: 2rem;
+        margin-top: -1.4rem;
         flex-direction: column;
     }
 
@@ -162,7 +162,7 @@
     .news-box, .texto, .botao {
         width: 90%;
         padding: 2rem;
-        margin-top: 2rem;
+        margin-top: -1.5rem;
         flex-direction: column;
     }
 
@@ -216,7 +216,7 @@
     .news-box, .texto, .botao {
         width: 90%;
         padding: 2rem;
-        margin-top: 2rem;
+        margin-top: -1.5rem;
         flex-direction: column;
     }
    

@@ -16,7 +16,7 @@ dayjs.locale('pt-br');
 
 export function App() {
   const [releases, setReleases] = useState<Release[]>([]);
-  
+
   const handlefetchData = async () => {
     const params: Record<string, unknown> = {
       page: 1,
@@ -50,8 +50,8 @@ export function App() {
             <label className='data'>
               {dayjs(item.releaseDate).subtract(2.98, 'hour').format('DD/MM/YYYY HH:mm')}
             </label>
-            <h2 className='topico'>Versão - {item.code}</h2>
-            
+            <h2 className='topico mb-8'>Versão - {item.code}</h2>
+
             {item.releaseNotes?.find(note => note.noteType === 0) && (
               <h2 className='font-bold'>Novos Recursos</h2>
             )}
@@ -67,7 +67,7 @@ export function App() {
                 </div>
               )
             ))}
-            
+
             {item.releaseNotes?.find(note => note.noteType === 1) && (
               <h2 className='font-bold'>Correções</h2>
             )}
@@ -83,7 +83,7 @@ export function App() {
                 </div>
               )
             ))}
-            
+
             {item.releaseNotes?.find(note => note.noteType === 2) && (
               <h2 className='font-bold'>Melhorias</h2>
             )}
