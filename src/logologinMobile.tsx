@@ -1,6 +1,8 @@
+import "../src/App.css";
+
 export function LogoLoginMobile() {
   return (
-    <svg width="100" height="172" viewBox="0 0 172 172" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="70" height="160" viewBox="0 0 172 172" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g filter="url(#filter0_d_265_1173)">
         <circle cx="85" cy="85" r="82" fill="white" />
       </g>
