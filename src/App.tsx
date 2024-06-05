@@ -46,7 +46,7 @@ export function App() {
             <label className='data'>
               {dayjs(item.releaseDate).subtract(2.98, 'hour').format('DD/MM/YYYY HH:mm')}
             </label>
-            <h2 className='topico'>{item.code}</h2>
+            <h2 className='topico'>Versão - {item.code}</h2>
             
             {item.releaseNotes?.find(note => note.noteType === 0) && (
               <h2 className='font-bold'>Novos Recursos</h2>
