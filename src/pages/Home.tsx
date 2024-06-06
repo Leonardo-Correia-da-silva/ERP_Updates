@@ -35,7 +35,7 @@ export function HomePage() {
   useEffect(() => { handlefetchData() }, []);
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col mb-52">
       <div className="mb-16 from-blue-400 to-blue-950 bg-gradient-to-t h-32 md:h-40 relative flex justify-center">
         <div className="absolute">
           <LogoLoginMobile />
@@ -48,71 +48,83 @@ export function HomePage() {
         </div>
       </div>
       {releases.map((item) => (
-        <div key={item.id} className="news-box-container">
-          <div className='news-box'>
+        <div key={item.id} className="w-full flex  justify-center mb-5">
+          <div className='bg-blue-100 w-full p-10 mx-6 rounded-md'>
             <label className='data'>
               {dayjs(item.releaseDate).subtract(2.98, 'hour').format('DD/MM/YYYY HH:mm')}
             </label>
             <h2 className='topico mb-8'>Versão - {item.code}</h2>
 
             {item.releaseNotes?.find(note => {
-              if(note.noteType === 0 && (note.companyCode === id || !note.companyCode)) return note;
-              })&& (
-              <h2 className='font-bold'>Novos Recursos</h2>
-            )}
-            <br />
+              if (note.noteType === 0 && (note.companyCode === id || !note.companyCode)) return note;
+            }) && (
+                <h2 className='font-bold'>Novos Recursos</h2>
+              )}
 
-
-            {item.releaseNotes?.map((note) => (
-              note.noteType === 0 && (
-                (note.companyCode === id || !note.companyCode) && (
-                  <div key={note.id} className='mb-8'>
-                    <h3 className='font-semibold'> &bull; {note.topic}</h3>
-                    <div dangerouslySetInnerHTML={{ __html: note.description }}></div>
-                    {note.link && (
-                      <a href={note.link} target='_blank' className='link'>Saiba mais</a>
-                    )}
-                  </div>
+            <ul>
+              {item.releaseNotes?.map((note) => (
+                note.noteType === 0 && (
+                  (note.companyCode === id || !note.companyCode) && (
+                    <li key={note.id} >
+                      <div className='flex gap-3'>
+                        <h3 className='font-semibold'> {note.topic}</h3>{note.link && (
+                          <a href={note.link} target='_blank' className='link'>Saiba mais</a>
+                        )}
+                      </div>
+                      <div dangerouslySetInnerHTML={{ __html: note.description }}></div>
+                    </li>
+                  )
                 )
-              )
-            ))}
+              ))}
+            </ul>
 
 
+
+        <ul>
             {item.releaseNotes?.find(note => {
-              if(note.noteType === 1 && (note.companyCode === id || !note.companyCode)) return note;
-              }) && (
-              <h2 className='font-bold'>Correções</h2>
-            )}
-            <br />
+              if (note.noteType === 1 && (note.companyCode === id || !note.companyCode)) return note;
+            }) && (
+                <h2 className='font-bold'>Correções</h2>
+              )}
+            
             {item.releaseNotes?.map((note) => (
               note.noteType === 1 && (note.companyCode === id || !note.companyCode) && (
-                <div key={note.id} className='mb-8'>
-                  <h3 className='font-semibold'>&bull; {note.topic}</h3>
-                  <div dangerouslySetInnerHTML={{ __html: note.description }}></div>
-                  {note.link && (
+                <li key={note.id}>
+                <div className='flex gap-3'>
+                  <h3 className='font-semibold'>{note.topic}</h3> {note.link && (
                     <a href={note.link} target='_blank' className='link'>Saiba mais</a>
                   )}
-                </div>
+                  </div>
+                  <div dangerouslySetInnerHTML={{ __html: note.description }}></div>
+                </li>
               )
             ))}
+        </ul>
 
-            {item.releaseNotes?.find(note => {
-              if(note.noteType === 2 && (note.companyCode === id || !note.companyCode)) return note;
+
+
+            <ul>
+              {item.releaseNotes?.find(note => {
+                if (note.noteType === 2 && (note.companyCode === id || !note.companyCode)) return note;
               }) && (
-              <h2 className='font-bold'>Melhorias</h2>
-            )}
-            <br />
-            {item.releaseNotes?.map((note) => (
-              note.noteType === 2 && (note.companyCode === id || !note.companyCode) && (
-                <div key={note.id} className='mb-8'>
-                  <h3 className='font-semibold'> &bull;{note.topic}</h3>
-                  <div dangerouslySetInnerHTML={{ __html: note.description }}></div>
-                  {note.link && (
-                    <a href={note.link} target='_blank' className='link'>Saiba mais</a>
-                  )}
-                </div>
-              )
-            ))}
+                  <h2 className='font-bold'>Melhorias</h2>
+                )}
+              
+              {item.releaseNotes?.map((note) => (
+                note.noteType === 2 && (note.companyCode === id || !note.companyCode) && (
+                  <li key={note.id}>
+                    <div className='flex gap-3'>
+                      <h3 className='font-semibold'>{note.topic}</h3>{note.link && (
+                        <a href={note.link} target='_blank' className='link'>Saiba mais</a>
+                      )}
+                    </div>
+                    <div dangerouslySetInnerHTML={{ __html: note.description }}></div>
+                  </li>
+                )
+              ))}
+            </ul>
+
+
           </div>
         </div>
       ))}
