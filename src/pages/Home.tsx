@@ -55,7 +55,9 @@ export function HomePage() {
             </label>
             <h2 className='topico mb-8'>Versão - {item.code}</h2>
 
-            {item.releaseNotes?.find(note => note.noteType === 0) && (
+            {item.releaseNotes?.find(note => {
+              if(note.noteType === 0 && (note.companyCode === id || !note.companyCode)) return note;
+              })&& (
               <h2 className='font-bold'>Novos Recursos</h2>
             )}
             <br />
@@ -63,7 +65,7 @@ export function HomePage() {
 
             {item.releaseNotes?.map((note) => (
               note.noteType === 0 && (
-                (note.companyCode === id || note.companyCode === undefined) && (
+                (note.companyCode === id || !note.companyCode) && (
                   <div key={note.id} className='mb-8'>
                     <h3 className='font-semibold'> &bull; {note.topic}</h3>
                     <div dangerouslySetInnerHTML={{ __html: note.description }}></div>
@@ -76,12 +78,14 @@ export function HomePage() {
             ))}
 
 
-            {item.releaseNotes?.find(note => note.noteType === 1) && (
+            {item.releaseNotes?.find(note => {
+              if(note.noteType === 1 && (note.companyCode === id || !note.companyCode)) return note;
+              }) && (
               <h2 className='font-bold'>Correções</h2>
             )}
             <br />
             {item.releaseNotes?.map((note) => (
-              note.noteType === 1 && (note.companyCode === id || note.companyCode === undefined) && (
+              note.noteType === 1 && (note.companyCode === id || !note.companyCode) && (
                 <div key={note.id} className='mb-8'>
                   <h3 className='font-semibold'>&bull; {note.topic}</h3>
                   <div dangerouslySetInnerHTML={{ __html: note.description }}></div>
@@ -92,12 +96,14 @@ export function HomePage() {
               )
             ))}
 
-            {item.releaseNotes?.find(note => note.noteType === 2) && (
+            {item.releaseNotes?.find(note => {
+              if(note.noteType === 2 && (note.companyCode === id || !note.companyCode)) return note;
+              }) && (
               <h2 className='font-bold'>Melhorias</h2>
             )}
             <br />
             {item.releaseNotes?.map((note) => (
-              note.noteType === 2 && (note.companyCode === id || note.companyCode === undefined) && (
+              note.noteType === 2 && (note.companyCode === id || !note.companyCode) && (
                 <div key={note.id} className='mb-8'>
                   <h3 className='font-semibold'> &bull;{note.topic}</h3>
                   <div dangerouslySetInnerHTML={{ __html: note.description }}></div>
