@@ -22,7 +22,7 @@ export function ReleaseCard({release}: Props){
 
     return (
         <div className="w-full flex  justify-center mb-5">
-          <div className='bg-blue-100 w-full p-20 mx-6 rounded-md'>
+          <div className='bg-blue-100 w-full p-10 mx-6 rounded-md'>
             <label className='data'>
               {dayjs(release.releaseDate).subtract(2.98, 'hour').format('DD/MM/YYYY HH:mm')}
             </label>
@@ -49,7 +49,7 @@ export function ReleaseCard({release}: Props){
                   )
                 )
               ))}
-            </ul>
+            </ul><br></br>
 
             <ul>
               {release.releaseNotes?.find(note => {
