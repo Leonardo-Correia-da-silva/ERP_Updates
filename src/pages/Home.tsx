@@ -8,7 +8,6 @@ import 'dayjs/locale/pt-br';
 import { Release } from '../dto/release.dto';
 import { api } from '../service/api';
 import { LogoLoginMobile } from '../logologinMobile';
-import { useParams } from 'react-router-dom';
 import { ReleaseCard } from '../components/ReleaseCard';
 
 dayjs.extend(utc);
@@ -48,9 +47,9 @@ export function HomePage() {
         </div>
       </div>
 
-            {releases.map((item) => (
-            <ReleaseCard release={item}/>
-            ))}
+      {releases.map((item) => (
+        <ReleaseCard release={item} />
+      ))}
     </div>
   );
 }
