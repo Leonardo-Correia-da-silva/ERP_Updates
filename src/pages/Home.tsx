@@ -49,7 +49,7 @@ export function HomePage() {
       </div>
       {releases.map((item) => (
         <div key={item.id} className="w-full flex  justify-center mb-5">
-          <div className='bg-blue-100 w-full p-10 mx-6 rounded-md'>
+          <div className='bg-blue-100 w-full p-20 mx-6 rounded-md'>
             <label className='data'>
               {dayjs(item.releaseDate).subtract(2.98, 'hour').format('DD/MM/YYYY HH:mm')}
             </label>
@@ -58,7 +58,7 @@ export function HomePage() {
             {item.releaseNotes?.find(note => {
               if (note.noteType === 0 && (note.companyCode === id || !note.companyCode)) return note;
             }) && (
-                <h2 className='font-bold'>Novos Recursos</h2>
+                <h2 className='font-bold mb-1'>Novos Recursos</h2>
               )}
 
             <ul>
@@ -84,7 +84,7 @@ export function HomePage() {
             {item.releaseNotes?.find(note => {
               if (note.noteType === 1 && (note.companyCode === id || !note.companyCode)) return note;
             }) && (
-                <h2 className='font-bold'>Correções</h2>
+                <h2 className='font-bold  mb-1'>Correções</h2>
               )}
             
             {item.releaseNotes?.map((note) => (
@@ -99,7 +99,7 @@ export function HomePage() {
                 </li>
               )
             ))}
-        </ul>
+        </ul><br></br>
 
 
 
@@ -107,7 +107,7 @@ export function HomePage() {
               {item.releaseNotes?.find(note => {
                 if (note.noteType === 2 && (note.companyCode === id || !note.companyCode)) return note;
               }) && (
-                  <h2 className='font-bold'>Melhorias</h2>
+                  <h2 className='font-bold  mb-1'>Melhorias</h2>
                 )}
               
               {item.releaseNotes?.map((note) => (
