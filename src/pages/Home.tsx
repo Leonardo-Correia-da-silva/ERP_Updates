@@ -59,24 +59,29 @@ export function HomePage () {
               <h2 className='font-bold'>Novos Recursos</h2>
             )}
             <br />
+
+            
             {item.releaseNotes?.map((note) => (
-              note.noteType === 0 && (note.companyCode === id || note.companyCode === undefined) && (
-                <div key={note.id} className='mb-8'>
-                  <h3 className='font-semibold'> &bull; {note.topic}</h3>
-                  <div dangerouslySetInnerHTML={{ __html: note.description }}></div>
-                  {note.link && (
-                    <a href={note.link} target='_blank' className='link'>Saiba mais</a>
-                  )}
-                </div>
+              note.noteType === 0 && (
+                (note.companyCode === id || note.companyCode === undefined ) && (
+                  <div key={note.id} className='mb-8'>
+                    <h3 className='font-semibold'> &bull; {note.topic}</h3>
+                    <div dangerouslySetInnerHTML={{ __html: note.description }}></div>
+                    {note.link && (
+                      <a href={note.link} target='_blank' className='link'>Saiba mais</a>
+                    )}
+                  </div>
+                )
               )
             ))}
 
+            
             {item.releaseNotes?.find(note => note.noteType === 1) && (
               <h2 className='font-bold'>Correções</h2>
             )}
             <br />
             {item.releaseNotes?.map((note) => (
-              note.noteType === 1 && (
+              note.noteType === 1 && (note.companyCode === id || note.companyCode === undefined) && (
                 <div key={note.id} className='mb-8'>
                   <h3 className='font-semibold'>&bull; {note.topic}</h3>
                   <div dangerouslySetInnerHTML={{ __html: note.description }}></div>
@@ -92,7 +97,7 @@ export function HomePage () {
             )}
             <br />
             {item.releaseNotes?.map((note) => (
-              note.noteType === 2 && (
+              note.noteType === 2 && (note.companyCode === id || note.companyCode === undefined) && (
                 <div key={note.id} className='mb-8'>
                   <h3 className='font-semibold'> &bull;{note.topic}</h3>
                   <div dangerouslySetInnerHTML={{ __html: note.description }}></div>
