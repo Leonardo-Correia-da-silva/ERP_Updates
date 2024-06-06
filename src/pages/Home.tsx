@@ -9,6 +9,7 @@ import { Release } from '../dto/release.dto';
 import { api } from '../service/api';
 import { LogoLoginMobile } from '../logologinMobile';
 import { useParams } from 'react-router-dom';
+import { ReleaseCard } from '../components/ReleaseCard';
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
@@ -18,7 +19,6 @@ dayjs.locale('pt-br');
 export function HomePage() {
   const [releases, setReleases] = useState<Release[]>([]);
 
-  const { id } = useParams()
 
   const handlefetchData = async () => {
     const params: Record<string, unknown> = {
@@ -47,87 +47,10 @@ export function HomePage() {
           <h1 className='titulo'>O que há de Novo!</h1>
         </div>
       </div>
-      {releases.map((item) => (
-        <div key={item.id} className="w-full flex  justify-center mb-5">
-          <div className='bg-blue-100 w-full p-20 mx-6 rounded-md'>
-            <label className='data'>
-              {dayjs(item.releaseDate).subtract(2.98, 'hour').format('DD/MM/YYYY HH:mm')}
-            </label>
-            <h2 className='topico mb-8'>Versão - {item.code}</h2>
 
-            {item.releaseNotes?.find(note => {
-              if (note.noteType === 0 && (note.companyCode === id || !note.companyCode)) return note;
-            }) && (
-                <h2 className='font-bold mb-1'>Novos Recursos</h2>
-              )}
-
-            <ul>
-              {item.releaseNotes?.map((note) => (
-                note.noteType === 0 && (
-                  (note.companyCode === id || !note.companyCode) && (
-                    <li key={note.id} >
-                      <div className='flex gap-3'>
-                        <h3 className='font-semibold'> {note.topic}</h3>{note.link && (
-                          <a href={note.link} target='_blank' className='link'>Saiba mais</a>
-                        )}
-                      </div>
-                      <div dangerouslySetInnerHTML={{ __html: note.description }}></div>
-                    </li>
-                  )
-                )
-              ))}
-            </ul>
-
-
-
-        <ul>
-            {item.releaseNotes?.find(note => {
-              if (note.noteType === 1 && (note.companyCode === id || !note.companyCode)) return note;
-            }) && (
-                <h2 className='font-bold  mb-1'>Correções</h2>
-              )}
-            
-            {item.releaseNotes?.map((note) => (
-              note.noteType === 1 && (note.companyCode === id || !note.companyCode) && (
-                <li key={note.id}>
-                <div className='flex gap-3'>
-                  <h3 className='font-semibold'>{note.topic}</h3> {note.link && (
-                    <a href={note.link} target='_blank' className='link'>Saiba mais</a>
-                  )}
-                  </div>
-                  <div dangerouslySetInnerHTML={{ __html: note.description }}></div>
-                </li>
-              )
+            {releases.map((item) => (
+            <ReleaseCard release={item}/>
             ))}
-        </ul><br></br>
-
-
-
-            <ul>
-              {item.releaseNotes?.find(note => {
-                if (note.noteType === 2 && (note.companyCode === id || !note.companyCode)) return note;
-              }) && (
-                  <h2 className='font-bold  mb-1'>Melhorias</h2>
-                )}
-              
-              {item.releaseNotes?.map((note) => (
-                note.noteType === 2 && (note.companyCode === id || !note.companyCode) && (
-                  <li key={note.id}>
-                    <div className='flex gap-3'>
-                      <h3 className='font-semibold'>{note.topic}</h3>{note.link && (
-                        <a href={note.link} target='_blank' className='link'>Saiba mais</a>
-                      )}
-                    </div>
-                    <div dangerouslySetInnerHTML={{ __html: note.description }}></div>
-                  </li>
-                )
-              ))}
-            </ul>
-
-
-          </div>
-        </div>
-      ))}
     </div>
   );
 }
