@@ -15,10 +15,10 @@ dayjs.extend(timezone);
 dayjs.locale('pt-br');
 
 
-export function HomePage () {
+export function HomePage() {
   const [releases, setReleases] = useState<Release[]>([]);
 
-  const {id} = useParams()
+  const { id } = useParams()
 
   const handlefetchData = async () => {
     const params: Record<string, unknown> = {
@@ -60,10 +60,10 @@ export function HomePage () {
             )}
             <br />
 
-            
+
             {item.releaseNotes?.map((note) => (
               note.noteType === 0 && (
-                (note.companyCode === id || note.companyCode === undefined ) && (
+                (note.companyCode === id || note.companyCode === undefined) && (
                   <div key={note.id} className='mb-8'>
                     <h3 className='font-semibold'> &bull; {note.topic}</h3>
                     <div dangerouslySetInnerHTML={{ __html: note.description }}></div>
@@ -75,7 +75,7 @@ export function HomePage () {
               )
             ))}
 
-            
+
             {item.releaseNotes?.find(note => note.noteType === 1) && (
               <h2 className='font-bold'>Correções</h2>
             )}
